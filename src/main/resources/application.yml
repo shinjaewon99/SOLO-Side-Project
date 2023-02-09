@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/demoProject
+    username: shin
+    password: 123
+    driver-class-name: org.h2.Driver
+  messages:
+    basename: messages
+
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+    properties:
+      hibernate:
+      format_sql: true
+
+logging.level:
+  org.hibernate.SQL: debug
+
