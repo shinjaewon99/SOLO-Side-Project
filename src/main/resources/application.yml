@@ -16,6 +16,14 @@ spring:
       hibernate:
       format_sql: true
 
+server:
+  servlet:
+    session:
+      timeout: 1800 # 1800초 (30분)이 세션 타임아웃 max시간 (최소는 10초)
+      cookie:
+        max-age: 1800
+        http-only: true
+
 logging.level:
   org.hibernate.SQL: debug
 
