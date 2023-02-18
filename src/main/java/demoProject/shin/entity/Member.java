@@ -5,8 +5,6 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 @Entity
 @Getter
@@ -15,6 +13,7 @@ import javax.persistence.Id;
  * 부모 객체의 필드값도 저장할수 있게 하기 위해서 사용
  */
 @SuperBuilder
+//@Setter 엔티티에서는 최대한 Setter는 자제해야된다.
 
 public class Member {
 
@@ -23,12 +22,19 @@ public class Member {
 
 
 
-    private String loginId;
-
     private String mail;
-    private String password;
-    private String nickName;
+    private String password; //외부에 노출되서는 안 될 정보임.
+    private String nickname;
 
+
+    // 엔티티 클래스는 기본적으로 default 생성자가 있어야함 ( JPA에서 프록시 등등으로사용)
+    protected Member() {
+    }
+
+    public void SubInformMemberUpdate(String mail, String nickname) {
+        this.mail = mail;
+        this.nickname = nickname;
+    }
 
 
 }

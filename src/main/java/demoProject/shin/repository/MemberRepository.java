@@ -11,6 +11,7 @@ import java.util.Optional;
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
     // select m from Member m where m.name = ?  JPQL을 자동으로 생성 (스프링 데이터 Jpa를 사용했기때문)
+    // Optioanl : null일수 도있는 값을 NPE가 발생하지 않게 "도와줌"
     Optional<Member> findByName(String name);
 
     Optional<Member> findByEmail(String mail);
