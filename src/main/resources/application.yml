@@ -15,6 +15,19 @@ spring:
     properties:
       hibernate:
       format_sql: true
+  ## 이메일 발송을 위한 설정 내용
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    ## google 계정 정보
+    username: {YOUR_GMAIL_ADDRESS}
+    password: {YOUR_GMAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 
 server:
   servlet:

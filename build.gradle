@@ -30,6 +30,8 @@ repositories {
 }
 
 dependencies {
+    // 이메일 발송을 위해 의존성 추가
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
